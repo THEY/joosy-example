@@ -17,8 +17,15 @@ Joosy.namespace 'Posts', ->
       @data.post = Post.build()
       complete()
 
+    errorfy = (msg) ->
+      "<span class='error'>" + msg + "</span>"
+
     # Happens just after the page was loaded. Activates form.
     @afterLoad ->
       @form = Joosy.Form.attach @rawForm,
         resource: @data.post
         success: (data) => @navigate '/'
+        error: (errors) =>
+          $('.error').remove()
+          $('[name="post[body]"]').after(errorfy(errors.body[0])) if errors.body
+          $('[name="post[title]"]').after(errorfy(errors.title[0])) if errors.title
