@@ -3,5 +3,5 @@
 %hr
 %p
   = @post('body')
-  %a.btn.btn-info.btn-mini{:href => "#!/comments/new"}
+  %a.btn.btn-info.btn-mini{:href => "#!/posts/#{@post('id')}/comments/new"}
     Add Comment

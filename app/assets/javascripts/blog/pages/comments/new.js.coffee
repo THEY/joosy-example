@@ -10,7 +10,7 @@ Joosy.namespace 'Comments', ->
 
     # Data fetching hook
     @fetch (complete) ->
-      # Passes post to the template
+      @data.post_id = @params.id
       @data.comment = Comment.build()
       complete()
 

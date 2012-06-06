@@ -12,4 +12,5 @@ Joosy.namespace 'Posts', ->
       Post.find @params.id, (post) =>
         # Passes post to the template
         @data.post = post
+        @data.comments = post('comments')
         complete()

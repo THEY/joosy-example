@@ -1,2 +1,2 @@
 -# Includes partial
-!= @render '_form'
+!= @render '_form', {post_id: @post_id}
