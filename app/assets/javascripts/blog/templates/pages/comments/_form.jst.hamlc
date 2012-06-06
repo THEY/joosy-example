@@ -1,0 +1,4 @@
+%form.well
+  %input.span10{:name => 'comment[email]', :placeholder => 'E-Mail'}
+  %textarea.span10{:name => 'comment[body]', :placeholder => 'Body'}
+  %input.btn.btn-success.span4{:type => 'submit', :value => 'Save'}

@@ -10,3 +10,7 @@ Joosy.Router.map
     '/new'        : Posts.NewPage
     '/:id/edit'   : Posts.EditPage
     '/:id'        : Posts.ShowPage
+  '/comments'     :
+    '/new'        : Comments.NewPage
+    '/:id/edit'   : Comments.EditPage
+    '/:id'        : Comments.ShowPage

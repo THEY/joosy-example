@@ -23,3 +23,5 @@ Joosy.namespace 'Posts', ->
       @form = Joosy.Form.attach @rawForm,
         resource: @data.post
         success: (data) => @navigate '/'
+        error: (data) =>
+          alert data
