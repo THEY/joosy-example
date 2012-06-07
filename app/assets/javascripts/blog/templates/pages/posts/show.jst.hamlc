@@ -6,7 +6,8 @@
   %a.btn.btn-info.btn-mini{:href => "#!/posts/#{@post('id')}/comments/new"}
     Add Comment
   - if @comments
-    - @comments.each (comment) =>
+    - $.each @comments.data, (index, comment) ->
       %br
+      = index + 1
       = comment('email')
       = comment('body')
