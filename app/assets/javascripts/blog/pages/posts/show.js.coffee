@@ -24,4 +24,4 @@ Joosy.namespace 'Posts', ->
     deleteComment: (element, event) ->
       Comment.find $(element).attr('data-id'), (comment) ->
         comment.delete ->
-          console.log 'Delete!'
+          $(element).parent().parent().fadeToggle()
