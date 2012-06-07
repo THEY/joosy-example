@@ -14,3 +14,6 @@ class @ApplicationPage extends Joosy.Page
   @erase (container, complete) ->
     container.fadeTo 320, 0.2, =>
       complete()
+
+  @errorfy = (object, msg) ->
+    "<br class='error'/><span class='error'>#{object} #{msg}</span>"
