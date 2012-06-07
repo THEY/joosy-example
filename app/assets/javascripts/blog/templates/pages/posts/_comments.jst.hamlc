@@ -1,0 +1,23 @@
+%table.table#comment-table
+  %thead
+    %tr
+      %th #
+      %th Comment
+      %th Utils
+  %tbody
+    - if @comments
+      - $.each @comments.data, (index, comment) ->
+        %tr
+          %td
+            = index + 1
+          %td
+            %span.body= comment('body')
+            %span.email= " by " + comment('email')
+          %td
+            %a{:'data-id' => "#{comment('id')}", :class => 'delete'}
+              %i{:class => "icon-remove"}
+    - else
+      %tr
+        %td{:colspan => '2'}
+          %span.label.label-info
+            No Comments!!!

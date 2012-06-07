@@ -6,11 +6,11 @@
           %a{:style => 'display: none'}
             24 May 2012, 19:24:00
       %a.brand{:href => '#!/'}
-        Joosy Blog
+        Joosy Examples
       %ul.nav
         %li.divider-vertical
         %li
-          %a{:href => '#!/posts/new'} Write something
+          %a{:href => '#!/posts/new'} Add new blog post
 
 -# This element will include page content
 .container{:id => @yield()}

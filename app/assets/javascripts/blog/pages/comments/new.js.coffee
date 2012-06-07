@@ -19,5 +19,7 @@ Joosy.namespace 'Comments', ->
       @form = Joosy.Form.attach @rawForm,
         resource: @data.comment
         success: (data) => @navigate '/'
-        error: (data) =>
-          alert "Something Went Wrong: #{data}" 
+        error: (errors) =>
+          $('.error').remove()
+          $('[name="comment[email]"]').after(ApplicationPage.errorfy('Email', errors.email[0])) if errors.email
+          $('[name="comment[body]"]').after(ApplicationPage.errorfy('Body', errors.body[0])) if errors.body

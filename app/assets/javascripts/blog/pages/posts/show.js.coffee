@@ -14,3 +14,14 @@ Joosy.namespace 'Posts', ->
         @data.post = post
         @data.comments = post('comments')
         complete()
+
+    elements:
+      'deleteIcon':    '.delete'
+
+    events:
+      'click $deleteIcon':     'deleteComment'
+
+    deleteComment: (element, event) ->
+      Comment.find $(element).attr('data-id'), (comment) ->
+        comment.delete ->
+          console.log 'Delete!'

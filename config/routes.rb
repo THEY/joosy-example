@@ -1,4 +1,5 @@
 JoosyExample::Application.routes.draw do
+  root :to => 'blog#index'
   match 'blog' => 'blog#index'
 
   resources :posts do
