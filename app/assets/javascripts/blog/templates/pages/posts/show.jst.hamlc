@@ -3,11 +3,25 @@
 %hr
 %p
   = @post('body')
-  %a.btn.btn-info.btn-mini{:href => "#!/posts/#{@post('id')}/comments/new"}
-    Add Comment
-  - if @comments
-    - $.each @comments.data, (index, comment) ->
-      %br
-      = index + 1
-      = comment('email')
-      = comment('body')
+%br
+%a.btn.btn-primary{:href => "#!/posts/#{@post('id')}/comments/new"}
+  Add Comment
+%table.table#comment-table
+  %thead
+    %tr
+      %th #
+      %th Comment
+  %tbody
+    - if @comments
+      - $.each @comments.data, (index, comment) ->
+        %tr
+          %td
+            = index + 1
+          %td
+            %span.body= comment('body')
+            %span.email= " by " + comment('email')
+    - else
+      %tr
+        %td{:colspan => '2'}
+          %span.label.label-info
+            No Comments!!!
