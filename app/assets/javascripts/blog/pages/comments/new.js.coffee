@@ -19,3 +19,5 @@ Joosy.namespace 'Comments', ->
       @form = Joosy.Form.attach @rawForm,
         resource: @data.comment
         success: (data) => @navigate '/'
+        error: (data) =>
+          alert "Something Went Wrong: #{data}" 

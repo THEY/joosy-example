@@ -2,3 +2,4 @@
 class @Post extends Joosy.Resource.REST
   # Name of server model
   @entity 'post'
+  @map 'comments'

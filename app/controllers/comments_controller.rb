@@ -2,7 +2,11 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    if params[:post_id]
+      @comments = Post.find_by_id(params[:post_id]).comments
+    else
+      @comments = Comment.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

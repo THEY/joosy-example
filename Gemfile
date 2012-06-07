@@ -7,6 +7,8 @@ gem 'sqlite3'
 gem 'joosy', '1.0.0.RC2'
 gem 'jquery-rails'
 
+gem 'rabl'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

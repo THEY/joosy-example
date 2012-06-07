@@ -5,3 +5,8 @@
   = @post('body')
   %a.btn.btn-info.btn-mini{:href => "#!/posts/#{@post('id')}/comments/new"}
     Add Comment
+  - if @comments
+    - @comments.each (comment) =>
+      %br
+      = comment('email')
+      = comment('body')
